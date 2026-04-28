@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+    id("maven-publish")
 }
 
 android {
@@ -37,4 +38,18 @@ dependencies {
     api("com.squareup.retrofit2:converter-gson:2.11.0")
     api("com.squareup.okhttp3:okhttp:4.12.0")
     api("com.squareup.okhttp3:logging-interceptor:4.12.0")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+
+                groupId = "com.github.Odeskmandeep"
+                artifactId = "StripeSDKWrapper"
+                version = "1.0.0"
+            }
+        }
+    }
 }
