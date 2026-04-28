@@ -1,5 +1,15 @@
-Add this in your Settings.gradle:
+Step 1. Add it in your settings.gradle.kts at the end of repositories:
 
-maven {
-            url = uri("https://jitpack.io")
-        }
+dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url = uri("https://jitpack.io") }
+		}
+	}
+
+Step 2. Add the dependency
+
+dependencies {
+        implementation("com.github.Odeskmandeep:StripeSDKWrapper:Tag")
+}
