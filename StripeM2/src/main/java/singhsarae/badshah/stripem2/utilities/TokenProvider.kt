@@ -43,6 +43,8 @@ class TokenProvider() : ConnectionTokenProvider {
                     hashMap = reqBodyHash
                 )
                 if (response.isSuccessful) {
+                    Log.i("BADSHAH","response.body():${response.body()}")
+                    Log.i("BADSHAH"," response.body()?.secret:${ response.body()?.secret}")
                     val secret = response.body()?.secret
                     if (!secret.isNullOrEmpty()){
                         callback.onSuccess(secret)
