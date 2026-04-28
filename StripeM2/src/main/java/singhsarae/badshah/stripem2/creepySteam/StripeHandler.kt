@@ -18,7 +18,7 @@ import singhsarae.badshah.stripem2.interfaces.StripeCallbacks
 import singhsarae.badshah.stripem2.utilities.ExtensionFuns
 import singhsarae.badshah.stripem2.utilities.ExtensionFuns.TokenUrlPref
 
-abstract class StripeHandler {
+internal abstract class StripeHandler {
 
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
