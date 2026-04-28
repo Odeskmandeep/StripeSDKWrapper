@@ -46,11 +46,11 @@ class TokenProvider() : ConnectionTokenProvider {
                     Log.i("BADSHAH","response.body():${response.body()}")
                     Log.i("BADSHAH"," response.body()?.secret:${ response.body()?.secret}")
                     val secret = response.body()?.secret
-                    if (!secret.isNullOrEmpty()){
-                        callback.onSuccess(secret)
-                    }else{
-                        callback.onFailure(ConnectionTokenException("Failed to fetch connection token: No token available"))
-                    }
+//                    if (!secret.isNullOrEmpty()){
+                        callback.onSuccess(secret.toString())
+//                    }else{
+//                        callback.onFailure(ConnectionTokenException("Failed to fetch connection token: No token available"))
+//                    }
                 }else{
                     Log.i("BADSHAH","Token Provider Api Fail..")
                 }
