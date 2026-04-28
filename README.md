@@ -65,6 +65,7 @@ Step 4. Connect Stripe & it's connection callbacks:
 
 Backend Instructions:
 - Request Method: POST
+	
 Backend will get request body like:
 
  		 {
