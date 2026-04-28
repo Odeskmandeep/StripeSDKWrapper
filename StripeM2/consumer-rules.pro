@@ -1,20 +1,20 @@
-# Keep only public SDK entry point
--keep class singhsarae.badshah.stripem2.creepySteam.StripeManager {
-    public *;
-}
+# Keep SDK public entry
+-keep class singhsarae.badshah.stripem2.creepySteam.StripeManager{ *; }
 
-# Keep interfaces used by app
+# Keep all callbacks
 -keep interface singhsarae.badshah.stripem2.interfaces.** { *; }
 
-# Keep enums used by Stripe callbacks
--keepclassmembers enum * { *; }
+# Keep all data models (VERY IMPORTANT)
+-keep class singhsarae.badshah.stripem2.utilities.** { *; }
+-keep class singhsarae.badshah.stripem2.models.** { *; }
 
-# Remove logging
--assumenosideeffects class android.util.Log {
-    public static *** d(...);
-    public static *** v(...);
-    public static *** i(...);
+# Keep Gson fields
+-keepclassmembers class * {
+    @com.google.gson.annotations.SerializedName <fields>;
 }
 
-# Obfuscate everything else in SDK
+# Prevent stripping of data classes
+-keep class * extends java.io.Serializable { *; }
+
+# Allow obfuscation but not removal
 -keep,allowobfuscation class singhsarae.badshah.stripem2.** { *; }
