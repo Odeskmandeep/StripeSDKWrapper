@@ -1,6 +1,6 @@
 Step 1. Add it in your settings.gradle.kts at the end of repositories:
 
-dependencyResolutionManagement {
+	dependencyResolutionManagement {
 		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 		repositories {
 			mavenCentral()
@@ -10,6 +10,6 @@ dependencyResolutionManagement {
 
 Step 2. Add the dependency
 
-dependencies {
-        implementation("com.github.Odeskmandeep:StripeSDKWrapper:Tag")
-}
+	dependencies {
+	implementation("com.github.Odeskmandeep:StripeSDKWrapper:Tag")
+	}
