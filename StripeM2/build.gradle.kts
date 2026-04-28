@@ -44,11 +44,12 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-                from(components["release"])
-
                 groupId = "com.github.Odeskmandeep"
                 artifactId = "StripeSDKWrapper"
-                version = "1.0.0"
+                version = "1.0.2"
+
+                // 🔥 FIX: use default artifact instead of components["release"]
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
             }
         }
     }
