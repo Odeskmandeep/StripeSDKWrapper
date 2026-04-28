@@ -1,0 +1,3 @@
+-keep class singhsarae.badshah.stripem2.creepySteam.StripeManager { *; }
+-keep class singhsarae.badshah.stripem2.interfaces.** { *; }
+-dontwarn singhsarae.badshah.stripem2.**

@@ -1,34 +1,22 @@
 package singhsarae.badshah.stripem2.creepySteam
 
-import android.Manifest
 import android.app.Activity
 import android.app.Application
 import android.content.Context
-import android.content.SharedPreferences
-import android.content.pm.PackageManager
 import android.util.Log
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.stripe.stripeterminal.Terminal
 import com.stripe.stripeterminal.TerminalApplicationDelegate
-import com.stripe.stripeterminal.external.callable.Callback
 import com.stripe.stripeterminal.external.models.ConnectionStatus
-import com.stripe.stripeterminal.external.models.TerminalException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import singhsarae.badshah.stripem2.interfaces.StripeCallbacks
-import singhsarae.badshah.stripem2.utilities.ExtensionFuns
-import singhsarae.badshah.stripem2.utilities.ExtensionFuns.TokenUrlPref
-import singhsarae.badshah.stripem2.utilities.PreferenceHelper
 import kotlin.String
 
 object StripeManager {
 
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-    private val connector: StreamLineConnector = StreamLineConnectorImpl()
+    private val connector = StreamLineConnectorImpl()
     @Volatile
     private var appContext: Context? = null
     private var initialized = false
@@ -43,7 +31,7 @@ object StripeManager {
             initialized = true
             Log.e("BADSHAH","StripeManager SDK init Called..")
             // Initialize the Stripe Terminal SDK
-//            TerminalApplicationDelegate.onCreate(mApplication)
+            TerminalApplicationDelegate.onCreate(mApplication)
             appContext = mApplication.applicationContext
         }
     }
@@ -60,7 +48,7 @@ object StripeManager {
         callback: StripeCallbacks,
     ) {
 
-        connector.connectStripeIfPossible(
+        connector.connect(
             mActivity,
             apiKey,
             locationId,
