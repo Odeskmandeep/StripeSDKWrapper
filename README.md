@@ -68,11 +68,11 @@ Backend Instructions:
 	
 Backend will get request body like:
 
- 		 {
-			  "meta_data":{
-			    "Key": value
-			  }
+		 {
+			"meta_data":{
+			"Key": value
 			}
+		 }
 
 Note: you don't need to send the "meta_data" key!
 
