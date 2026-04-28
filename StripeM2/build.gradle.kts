@@ -34,7 +34,7 @@ android {
     // IMPORTANT: correct place for publishing config
     publishing {
         singleVariant("release") {
-            withSourcesJar()
+//            withSourcesJar()
         }
     }
 }
@@ -67,7 +67,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.Odeskmandeep"
                 artifactId = "StripeSDKWrapper"
-                version = "1.0.16"
+                version = "1.0.17to"
 
                 from(components["release"])
             }
