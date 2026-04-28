@@ -52,7 +52,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.Odeskmandeep"
                 artifactId = "StripeSDKWrapper"
-                version = "1.0.2"
+                version = "1.0.3"
 
                 from(components["release"])
             }
