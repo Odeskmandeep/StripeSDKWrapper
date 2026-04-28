@@ -15,8 +15,6 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "consumer-rules.pro"
@@ -36,7 +34,7 @@ android {
     // IMPORTANT: correct place for publishing config
     publishing {
         singleVariant("release") {
-//            withSourcesJar()
+            withSourcesJar()
         }
     }
 }
@@ -69,7 +67,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.Odeskmandeep"
                 artifactId = "StripeSDKWrapper"
-                version = "1.0.13"
+                version = "1.0.16"
 
                 from(components["release"])
             }
