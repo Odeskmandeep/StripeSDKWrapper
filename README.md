@@ -10,6 +10,4 @@ Step 1. Add it in your settings.gradle.kts at the end of repositories:
 
 Step 2. Add the dependency
 
-	dependencies {
-	implementation("com.github.Odeskmandeep:StripeSDKWrapper:Tag")
-	}
+	implementation("com.github.Odeskmandeep:StripeSDKWrapper:LATEST_TAG_VERSION")
