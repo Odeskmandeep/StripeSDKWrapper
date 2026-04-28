@@ -63,16 +63,16 @@ Step 4. Connect Stripe & it's connection callbacks:
                 callback = callbacks,
             )
 
-Backend Instructions:
+Backend Instructions Mandatory (if implementing your own Apis):
 - Request Method: POST
 	
 Backend will get request body like:
 
-		 {
-			"meta_data":{
-			"Key": value
-			}
-		 }
+	 {
+		"meta_data":{
+		"Key": value
+		}
+	 }
 
 Note: you don't need to send the "meta_data" key!
 
