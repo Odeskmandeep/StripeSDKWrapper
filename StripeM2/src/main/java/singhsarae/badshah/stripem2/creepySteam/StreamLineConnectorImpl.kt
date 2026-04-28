@@ -1,3 +1,3 @@
 package singhsarae.badshah.stripem2.creepySteam
 
-class StreamLineConnectorImpl: StreamLineConnector() {}
+internal class StreamLineConnectorImpl: StreamLineConnector() {}
