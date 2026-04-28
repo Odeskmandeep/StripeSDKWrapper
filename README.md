@@ -20,21 +20,11 @@ Step 4. Connect Stripe & it's connection callbacks:
 
 	val callbacks = object: StripeCallbacks{
             override fun onSuccess(reader: a) {
-                mainScope.launch {
-                    Toast.makeText(this@MainActivity,"Stripe onSuccess: ${reader.readerName}",Toast.LENGTH_LONG).show()
-                }
-                Log.i("BADSHAH","Stripe onSuccess Called reader.readerName:${reader.readerName}")
+                //Reader Connected Successfuly.
             }
 
             override fun onError(error: String) {
-                mainScope.launch {
-                    Toast.makeText(
-                        this@MainActivity,
-                        "Stripe Error: $error",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-                Log.i("BADSHAH","Stripe Error: $error")
+               
             }
 
             override fun onFinishInstallingUpdate(
