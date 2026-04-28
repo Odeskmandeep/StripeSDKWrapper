@@ -16,7 +16,7 @@ import kotlin.String
 object StripeManager {
 
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-    private val connector = StreamLineConnectorImpl()
+    private val connector: StreamLineConnector = StreamLineConnectorImpl()
     @Volatile
     private var appContext: Context? = null
     private var initialized = false
