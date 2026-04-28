@@ -62,3 +62,22 @@ Step 4. Connect Stripe & it's connection callbacks:
                 enableSimulation = false, //Simulator Enable/Disable
                 callback = callbacks,
             )
+
+Backend Instructions:
+- Request Method: POST
+Backend will get request body like:
+
+ 		 {
+			  "meta_data":{
+			    "Key": value
+			  }
+			}
+
+Note: you don't need to send the "meta_data" key!
+
+And Response should be like:
+
+	{      
+	"secret": "string" 
+ 	}
+
