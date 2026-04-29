@@ -106,6 +106,18 @@ internal class StreamLineConnectorImpl: StreamLineConnector {
         currency: String?,
         callBacks: PaymentCallBacks
     ) {
+        if (readerConnectionStatus() != ConnectionStatus.CONNECTED.toString()){
+            callBacks.onFailure(PaymentProcessFailed(
+                error = "Reader not connected.",
+                amountInCents = amountInCents,
+                cardLast4Digits = null,
+                cardBrandName = null,
+                chargeID = null,
+                paymentIntentID = null,
+            ))
+            return
+        }
+
         if (clientSecret != null){
             retrievePaymentIntent(clientSecret,callBacks,amountInCents)
         }else{
@@ -255,6 +267,17 @@ internal class StreamLineConnectorImpl: StreamLineConnector {
             })
     }
 
+    /**
+     * Reader connection Status:
+     */
+    fun readerConnectionStatus():String{
+        val status = if (Terminal.isInitialized()) {
+            Terminal.getInstance().connectionStatus.toString()
+        }else{
+            ConnectionStatus.NOT_CONNECTED.toString()
+        }
+        return status
+    }
 
 
 }

@@ -11,6 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import singhsarae.badshah.stripem2.customModels.stripe.payments.PaymentCallBacks
+import singhsarae.badshah.stripem2.customModels.stripe.payments.PaymentProcessFailed
 import singhsarae.badshah.stripem2.interfaces.StripeCallbacks
 import kotlin.String
 
@@ -46,7 +47,7 @@ object StripeManager {
         optionalHeaderAccept:String?,
         bodyMetaDataHashMap:HashMap<String, Any>?,
         enableSimulation: Boolean,
-        callback: StripeCallbacks,
+        callbacks: StripeCallbacks,
     ) {
 
         connector.connect(
@@ -58,7 +59,7 @@ object StripeManager {
             optionalHeaderAccept,
             bodyMetaDataHashMap,
             enableSimulation,
-            callback,
+            callbacks,
         )
     }
 
@@ -69,7 +70,7 @@ object StripeManager {
         currency:String?,
         callBacks: PaymentCallBacks
     ){
-        connector.collectPayment(
+            connector.collectPayment(
                 clientSecret,
                 amountInCents,
                 metaData,
@@ -78,14 +79,7 @@ object StripeManager {
             )
     }
 
-    fun readerConnectionStatus():String{
-        val status = if (Terminal.isInitialized()) {
-            Terminal.getInstance().connectionStatus.toString()
-        }else{
-            ConnectionStatus.NOT_CONNECTED.toString()
-        }
-        return status
-    }
+
 
 
 }
