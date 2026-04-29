@@ -279,5 +279,10 @@ internal class StreamLineConnectorImpl: StreamLineConnector {
         return status
     }
 
+    override fun getReaderConnectionStatus(): String {
+        return readerConnectionStatus()
+    }
+
+
 
 }

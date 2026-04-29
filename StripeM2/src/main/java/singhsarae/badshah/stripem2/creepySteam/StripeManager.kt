@@ -79,6 +79,10 @@ object StripeManager {
             )
     }
 
+    fun getReaderConnectionStatus(): String {
+        return  connector.getReaderConnectionStatus()
+    }
+
 
 
 

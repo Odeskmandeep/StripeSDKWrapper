@@ -30,4 +30,6 @@ internal interface StreamLineConnector {
         callback: CancelPaymentProcessCallBacks
     )
 
+    fun getReaderConnectionStatus():String
+
 }
