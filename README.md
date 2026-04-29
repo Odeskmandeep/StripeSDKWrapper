@@ -19,8 +19,8 @@ Step 3. Initialize the SDK in Applicaton Class
 Step 4. Connect Stripe & it's connection callbacks:
 
 	val callbacks = object: StripeCallbacks{
-            override fun onSuccess(reader: a) {
-                //Reader Connected Successfuly.
+            override fun onSuccess(reader: singhsarae.badshah.stripem2.customModels.stripe.reader.Reader) {
+              
             }
 
             override fun onError(error: String) {
@@ -31,26 +31,21 @@ Step 4. Connect Stripe & it's connection callbacks:
                 finished: Boolean?,
                 error: String?
             ) {
-
             }
 
             override fun onStartInstallingUpdate(started: Boolean) {
-
             }
 
             override fun onReportReaderSoftwareUpdateProgress(progress: Float) {
-
             }
 
-            override fun onReaderReconnectFailed(reader: a) {
-
+            override fun onReaderReconnectFailed(reader: singhsarae.badshah.stripem2.customModels.stripe.reader.Reader) {
             }
 
-            override fun onReaderReconnectSucceeded(reader: a) {
-
+            override fun onReaderReconnectSucceeded(reader: singhsarae.badshah.stripem2.customModels.stripe.reader.Reader) {
             }
-		}
 
+        }
 		StripeManager.connectStripeIfPossible(
                 mActivity = this,
                 apiKey = null, //Important if not Required Backend dependency
