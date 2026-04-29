@@ -77,3 +77,31 @@ And Response should be like:
 	"secret": "string" 
  	}
 
+Step 5. Collect Payments:
+
+	val paymentCallBacks = object : PaymentCallBacks{
+            override fun onSuccess(status: PaymentSuccess) {
+               
+            }
+
+            override fun onFailure(status: PaymentProcessFailed) {
+                
+            }
+
+            override fun onPaymentStatusChange(status: String) {
+                
+            }
+
+        }
+
+		 StripeManager.collectPayment(
+                clientSecret = null, //required when operating from Backend
+                amountInCents = null, //required when operating from Frontend.
+                metaData = null, //required when operating from Frontend.
+                currency = "usd", //required when operating from Frontend.
+                callBacks = paymentCallBacks
+            )
+
+Check Reader Connection By:
+
+	StripeManager.getReaderConnectionStatus()
