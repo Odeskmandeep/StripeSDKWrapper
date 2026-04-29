@@ -6,7 +6,6 @@
 
 # Keep all data models (VERY IMPORTANT)
 -keep class singhsarae.badshah.stripem2.utilities.** { *; }
--keep class singhsarae.badshah.stripem2.models.** { *; }
 
 # Keep Gson fields
 -keepclassmembers class * {
