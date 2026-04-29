@@ -18,6 +18,7 @@
 
 # Keep SDK public API WITHOUT obfuscation
 -keep class singhsarae.badshah.stripem2.customModels.** { *; }
+-keep class singhsarae.badshah.stripem2.utilities.** { *; }
 
 # Keep Kotlin getters (important)
 -keepclassmembers class * {

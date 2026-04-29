@@ -1,6 +1,8 @@
 package singhsarae.badshah.stripem2.creepySteam
 
 import android.app.Activity
+import singhsarae.badshah.stripem2.customModels.stripe.payments.CancelPaymentProcessCallBacks
+import singhsarae.badshah.stripem2.customModels.stripe.payments.PaymentCallBacks
 import singhsarae.badshah.stripem2.interfaces.StripeCallbacks
 
 internal interface StreamLineConnector {
@@ -15,4 +17,17 @@ internal interface StreamLineConnector {
         enableSimulation: Boolean,
         callback: StripeCallbacks,
     )
+
+    fun collectPayment(
+        clientSecret:String?,
+        amountInCents: Float,
+        metaData: HashMap<String, String>?,
+        currency:String?,
+        callBacks: PaymentCallBacks
+    )
+
+    fun cancelPaymentProcess(
+        callback: CancelPaymentProcessCallBacks
+    )
+
 }

@@ -10,6 +10,7 @@ import com.stripe.stripeterminal.external.models.ConnectionStatus
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import singhsarae.badshah.stripem2.customModels.stripe.payments.PaymentCallBacks
 import singhsarae.badshah.stripem2.interfaces.StripeCallbacks
 import kotlin.String
 
@@ -59,7 +60,22 @@ object StripeManager {
             enableSimulation,
             callback,
         )
+    }
 
+    fun collectPayment(
+        clientSecret:String?,
+        amountInCents: Float,
+        metaData: HashMap<String, String>?,
+        currency:String?,
+        callBacks: PaymentCallBacks
+    ){
+        connector.collectPayment(
+                clientSecret,
+                amountInCents,
+                metaData,
+                currency,
+                callBacks
+            )
     }
 
     fun readerConnectionStatus():String{
