@@ -15,6 +15,3 @@
 
 # Prevent stripping of data classes
 -keep class * extends java.io.Serializable { *; }
-
-# Allow obfuscation but not removal
--keep,allowobfuscation class singhsarae.badshah.stripem2.** { *; }
