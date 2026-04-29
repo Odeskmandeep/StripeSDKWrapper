@@ -17,7 +17,7 @@
 -keep class * extends java.io.Serializable { *; }
 
 # Keep SDK public API WITHOUT obfuscation
--keep class singhsarae.badshah.stripem2.** { *; }
+-keep class singhsarae.badshah.stripem2.customModels.** { *; }
 
 # Keep Kotlin getters (important)
 -keepclassmembers class * {
