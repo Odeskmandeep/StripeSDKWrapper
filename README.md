@@ -55,7 +55,7 @@ Step 4. Connect Stripe & it's connection callbacks:
                 optionalHeaderAccept = null,
                 bodyMetaDataHashMap = null, //Json Data (backend will recive this data in the Object of "meta_data" key)
                 enableSimulation = false, //Simulator Enable/Disable
-                callback = callbacks,
+                callbacks = callbacks,
             )
 
 Backend Instructions Mandatory (if implementing your own Apis):
