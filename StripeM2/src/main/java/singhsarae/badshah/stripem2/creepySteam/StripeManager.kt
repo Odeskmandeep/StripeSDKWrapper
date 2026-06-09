@@ -10,6 +10,7 @@ import com.stripe.stripeterminal.external.models.ConnectionStatus
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import singhsarae.badshah.stripem2.customModels.stripe.payments.CancelPaymentProcessCallBacks
 import singhsarae.badshah.stripem2.customModels.stripe.payments.PaymentCallBacks
 import singhsarae.badshah.stripem2.customModels.stripe.payments.PaymentProcessFailed
 import singhsarae.badshah.stripem2.interfaces.StripeCallbacks
@@ -77,6 +78,10 @@ object StripeManager {
                 currency,
                 callBacks
             )
+    }
+
+    fun cancelPaymentProcess(callback: CancelPaymentProcessCallBacks){
+        connector.cancelPaymentProcess(callback)
     }
 
     fun getReaderConnectionStatus(): String {
