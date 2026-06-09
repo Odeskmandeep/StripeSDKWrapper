@@ -102,6 +102,21 @@ Step 5. Collect Payments:
                 callBacks = paymentCallBacks
             )
 
+>> Cancel Payment Process:
+
+		val cancelCallBack = object : CancelPaymentProcessCallBacks {
+            override fun onSuccess() {
+
+            }
+
+            override fun onFailure(error: String) {
+
+            }
+
+        }
+        StripeManager.cancelPaymentProcess(cancelCallBack)
+
+
 Check Reader Connection By:
 
 	StripeManager.getReaderConnectionStatus()
